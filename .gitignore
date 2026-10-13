@@ -1,0 +1,14 @@
+# Python and test cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Secrets: never commit these
+.env
+.env.*
+*.pem
+*.key
+
+# Local data and generated files
+data/raw/
