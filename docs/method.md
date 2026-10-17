@@ -12,8 +12,8 @@ We use two non-language-model methods to predict weekly units:
 We simulated the last 8 weeks of operations. Both methods started with identical stock (1.2x the 4-week average). Each week, we fulfilled demand, recorded lost sales and leftover stock, and ordered `max(0, 1.2 * next_week_forecast - current_stock)`, arriving the following week.
 
 **Results**  
-- **Baseline**: Forecast error of `[BASELINE_ERROR]`, `[BASELINE_LOST]` lost units, average leftover value of `$[BASELINE_VALUE]`.
-- **Seasonal**: Forecast error of `[SEASONAL_ERROR]`, `[SEASONAL_LOST]` lost units, average leftover value of `$[SEASONAL_VALUE]`.
+- **Baseline**: Forecast error of 0.5166, 29,722 lost units ($39,922.05 lost value), average leftover value of $268.19 (209.03 average leftover units).
+- **Seasonal**: Forecast error of 0.6395, 26,933 lost units ($34,438.94 lost value), average leftover value of $398.40 (339.33 average leftover units).
 
 **Honest Limits**  
 This is a simulation using public historical data and simulated stock. The language model (AMD Token Factory) *only* explains the actions in plain English; it **does not** forecast or influence the numbers.

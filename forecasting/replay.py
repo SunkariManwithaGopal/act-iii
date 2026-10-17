@@ -1,7 +1,15 @@
-import pandas as pd
-import numpy as np
-import json
+import sys
 from pathlib import Path
+
+# Ensure repo root is on sys.path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
+import json
+import numpy as np
+import pandas as pd
 from forecasting.methods import baseline, seasonal
 
 def run_replay(weekly_units: pd.DataFrame, products: pd.DataFrame, test_weeks=8):
@@ -11,15 +19,16 @@ def run_replay(weekly_units: pd.DataFrame, products: pd.DataFrame, test_weeks=8)
     results = {
         "test_weeks": test_weeks,
         "num_products": len(weekly_units.columns),
-        "baseline": {"forecast_error": 0.0, "lost_units": 0, "avg_leftover_units": 0.0, "leftover_value": 0.0},
-        "seasonal": {"forecast_error": 0.0, "lost_units": 0, "avg_leftover_units": 0.0, "leftover_value": 0.0},
+        "baseline": {"forecast_error": 0.0, "lost_units": 0, "lost_value": 0.0, "avg_leftover_units": 0.0, "leftover_value": 0.0},
+        "seasonal": {"forecast_error": 0.0, "lost_units": 0, "lost_value": 0.0, "avg_leftover_units": 0.0, "leftover_value": 0.0},
         "assumptions": [
             "Public sales data from UCI Online Retail II.",
             "Stock levels are simulated, not real.",
             "1-week delivery time for all orders.",
             "Target buffer stock is 1.2x the forecast.",
             "Average price is used as a stand-in for cost/value.",
-            "Test window represents the peak gift season (last 8 weeks)."
+            "Test window represents the peak gift season (last 8 weeks).",
+            "lost_value and leftover_value both use average price as a stand-in; we added lost_value after seeing the first results"
         ]
     }
     
@@ -30,6 +39,7 @@ def run_replay(weekly_units: pd.DataFrame, products: pd.DataFrame, test_weeks=8)
         total_abs_miss = 0.0
         total_actual = 0.0
         total_lost = 0.0
+        total_lost_value = 0.0
         weekly_leftover_units = []
         weekly_leftover_value = []
         
@@ -52,6 +62,7 @@ def run_replay(weekly_units: pd.DataFrame, products: pd.DataFrame, test_weeks=8)
                 sold = min(stock, demand)
                 lost = demand - sold
                 total_lost += lost
+                total_lost_value += lost * avg_price
                 stock -= sold
                 
                 weekly_leftover_units.append(stock)
@@ -87,6 +98,7 @@ def run_replay(weekly_units: pd.DataFrame, products: pd.DataFrame, test_weeks=8)
 
         results[method_name]["forecast_error"] = round(total_abs_miss / total_actual, 4) if total_actual > 0 else 0.0
         results[method_name]["lost_units"] = int(total_lost)
+        results[method_name]["lost_value"] = round(total_lost_value, 2)
         results[method_name]["avg_leftover_units"] = round(sum(weekly_leftover_units) / len(weekly_leftover_units), 2) if weekly_leftover_units else 0.0
         results[method_name]["leftover_value"] = round(sum(weekly_leftover_value) / len(weekly_leftover_value), 2) if weekly_leftover_value else 0.0
 
@@ -134,11 +146,11 @@ if __name__ == "__main__":
         
     results, actions = run_replay(weekly_units, products, test_weeks=8)
     
-    with open(eval_dir / "results.json", "w") as f:
+    with open(eval_dir / "results.json", "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
-    with open(data_dir / "actions.json", "w") as f:
+    with open(data_dir / "actions.json", "w", encoding="utf-8") as f:
         json.dump(actions, f, indent=2)
         
-    print("✅ Replay complete.")
-    print(f"Baseline -> Error: {results['baseline']['forecast_error']}, Lost: {results['baseline']['lost_units']}")
-    print(f"Seasonal -> Error: {results['seasonal']['forecast_error']}, Lost: {results['seasonal']['lost_units']}")
+    print("[OK] Replay complete.")
+    print(f"Baseline -> Error: {results['baseline']['forecast_error']}, Lost: {results['baseline']['lost_units']}, Lost Value: ${results['baseline']['lost_value']}")
+    print(f"Seasonal -> Error: {results['seasonal']['forecast_error']}, Lost: {results['seasonal']['lost_units']}, Lost Value: ${results['seasonal']['lost_value']}")

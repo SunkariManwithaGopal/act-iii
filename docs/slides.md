@@ -17,10 +17,11 @@
 # Slide 3: Results & Limits
 - **Title**: Measured Outcomes
 - **Bullets**:
-  - Seasonal method achieved `[SEASONAL_ERROR]` forecast error.
-  - Reduced lost units to `[SEASONAL_LOST]` in peak season simulation.
+  - Forecast error: Baseline 0.5166 vs. Seasonal 0.6395.
+  - Lost units: Seasonal reduced lost units to 26,933 ($34,438.94) vs. Baseline 29,722 ($39,922.05).
+  - Leftover value: Baseline $268.19 vs. Seasonal $398.40.
   - Limit: Uses simulated stock and historical data.
-- **Speaker Notes**: "Here are the actual numbers from our eval. We are honest about what is simulated."
+- **Speaker Notes**: "Here are the actual numbers from our eval: the baseline achieved lower forecast error (0.5166 vs 0.6395), but the seasonal method reduced lost units by 2,789 in peak season simulation. We are honest about trade-offs and simulated stock."
 
 # Slide 4: AMD Usage & Next Steps
 - **Title**: AI for Explanation, Not Prediction

@@ -6,13 +6,13 @@
 
 **[0:10 - 0:60] Live Demo**  
 *Screen*: Live public URL of Restock Copilot Lite. Scroll to a specific product row.  
-*Audio*: "This is Restock Copilot Lite. It uses transparent, rule-based forecasting on public retail data. Here, the seasonal method forecasts `[SEASONAL_FC]` units. The system recommends a `[ACTION]` of `[QUANTITY]` units."  
+*Audio*: "This is Restock Copilot Lite. It uses transparent, rule-based forecasting on public retail data. Here, for small popcorn holders, the seasonal method forecasts 2443.3 units. The system recommends a reorder of 2932 units."  
 *Screen*: Click the "Explain" button. Wait for the badge to say "live (AMD)".  
 *Audio*: "Instead of just showing numbers, we use an AMD-hosted language model to explain the 'why' in plain English. Notice the 'live (AMD)' badge, proving this is a real-time API call."
 
 **[0:60 - 0:80] Results & Limits**  
 *Screen*: Scroll up to the Results panel showing the comparison table.  
-*Audio*: "We proved this works via an 8-week replay simulation. The seasonal method achieved a forecast error of `[SEASONAL_ERROR]` with `[SEASONAL_LOST]` lost units. Note: stock is simulated, and this uses historical public data."
+*Audio*: "We proved this via an 8-week replay simulation. The seasonal method had 26,933 lost units and a forecast error of 0.6395, compared to 29,722 lost units and 0.5166 error for baseline. Note: stock is simulated, and this uses historical public data."
 
 **[0:80 - 0:90] AMD Usage**  
 *Screen*: Footer of the app.  
