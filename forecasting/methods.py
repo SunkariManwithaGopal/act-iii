@@ -28,3 +28,15 @@ def seasonal(s: pd.Series, t: int, alpha: float = 0.4) -> float:
             ratio = float(np.clip(s.iloc[t - 52] / base, 0.5, 2.0))
     out = level * ratio
     return 0.0 if np.isnan(out) else float(out)
+
+
+def smoothed(s: pd.Series, t: int, alpha: float = 0.2) -> float:
+    """
+    Smoothed trend: last value of the exponential weighted mean of all
+    past weeks (no seasonal ratio). Uses only s.iloc[:t].
+    """
+    past = s.iloc[:t]
+    if len(past) == 0:
+        return 0.0
+    out = past.ewm(alpha=alpha, adjust=False).mean().iloc[-1]
+    return 0.0 if np.isnan(out) else float(out)
