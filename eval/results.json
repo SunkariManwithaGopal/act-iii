@@ -15,13 +15,22 @@
     "avg_leftover_units": 339.33,
     "leftover_value": 398.4
   },
+  "smoothed": {
+    "forecast_error": 0.5077,
+    "lost_units": 32728,
+    "lost_value": 46977.69,
+    "avg_leftover_units": 180.19,
+    "leftover_value": 218.08
+  },
   "assumptions": [
     "Public sales data from UCI Online Retail II.",
     "Stock levels are simulated, not real.",
     "1-week delivery time for all orders.",
     "Target buffer stock is 1.2x the forecast.",
     "Average price is used as a stand-in for cost/value.",
-    "Test window represents the peak gift season (last 8 weeks).",
-    "lost_value and leftover_value both use average price as a stand-in; we added lost_value after seeing the first results"
+    "test window is the 8-week pre-Christmas build-up starting 2011-10-10",
+    "lost_value and leftover_value both use average price as a stand-in; we added lost_value after seeing the first results",
+    "the smoothed method (exponential average, alpha 0.2) was chosen on two validation windows before the test window, after the first test results had been seen",
+    "forecast error is the only measure used to choose which method drives the suggested orders"
   ]
 }

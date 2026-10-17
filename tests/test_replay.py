@@ -14,11 +14,12 @@ def test_replay_outputs_valid():
     
     results, actions = run_replay(df, products, test_weeks=8)
     
-    # Check no NaNs
-    assert not np.isnan(results["baseline"]["forecast_error"])
-    assert not np.isnan(results["seasonal"]["avg_leftover_units"])
-    assert not np.isnan(results["baseline"]["lost_value"])
-    assert not np.isnan(results["seasonal"]["lost_value"])
+    # Check no NaNs across all three methods
+    for m in ["baseline", "seasonal", "smoothed"]:
+        assert not np.isnan(results[m]["forecast_error"])
+        assert not np.isnan(results[m]["avg_leftover_units"])
+        assert not np.isnan(results[m]["lost_value"])
+        assert results[m]["lost_units"] >= 0
     
     # Check actions length
     assert len(actions) == 3
@@ -30,7 +31,42 @@ def test_zero_demand_no_lost_units():
     products = pd.DataFrame({"sku": ["SKU_000"], "description": ["A"], "average_price": [10.0]})
     
     results, _ = run_replay(df, products, test_weeks=8)
-    assert results["baseline"]["lost_units"] == 0
-    assert results["seasonal"]["lost_units"] == 0
-    assert results["baseline"]["lost_value"] == 0.0
-    assert results["seasonal"]["lost_value"] == 0.0
+    for m in ["baseline", "seasonal", "smoothed"]:
+        assert results[m]["lost_units"] == 0
+        assert results[m]["lost_value"] == 0.0
+
+def test_actions_method_options():
+    # Construct a dataset where seasonal forecast is higher than baseline forecast.
+    # Total weeks: 68 (60 train weeks, 8 test weeks).
+    # Last year at week 68 - 52 = 16 has a surge of 60 units against a base of 20 units (ratio = 2.0).
+    # In recent weeks up to index 68, demand is steady at 10 units.
+    # Baseline forecast at week 68 will be 10.0.
+    # Seasonal forecast at week 68 will be 20.0 (higher).
+    n_weeks = 68
+    dates = pd.date_range(start='2009-12-07', periods=n_weeks, freq='W-MON')
+    data = [10.0] * n_weeks
+    data[16] = 60.0
+    df = pd.DataFrame({"SKU_TEST": data}, index=dates)
+    products = pd.DataFrame({"sku": ["SKU_TEST"], "description": ["Test Item"], "average_price": [10.0]})
+    
+    res_base, act_base = run_replay(df, products, test_weeks=8, actions_method="baseline")
+    res_seas, act_seas = run_replay(df, products, test_weeks=8, actions_method="seasonal")
+    res_smooth, act_smooth = run_replay(df, products, test_weeks=8, actions_method="smoothed")
+    res_auto, act_auto = run_replay(df, products, test_weeks=8, actions_method="auto")
+    
+    # Check results are identical regardless of actions_method across all options
+    assert res_base == res_seas == res_smooth == res_auto
+    
+    # Check forecasts in actions
+    assert act_base[0]["baseline_forecast"] == act_seas[0]["baseline_forecast"] == act_smooth[0]["baseline_forecast"]
+    assert act_base[0]["forecast"] == act_base[0]["baseline_forecast"]
+    assert act_seas[0]["forecast"] > act_base[0]["forecast"]
+    
+    # Check baseline gives lower quantity when seasonal forecast is higher
+    assert act_base[0]["quantity"] < act_seas[0]["quantity"]
+
+    # Check auto behavior: chooses smoothed if smoothed error < baseline error, else baseline
+    if res_auto["smoothed"]["forecast_error"] < res_auto["baseline"]["forecast_error"]:
+        assert act_auto[0]["forecast"] == act_smooth[0]["forecast"]
+    else:
+        assert act_auto[0]["forecast"] == act_base[0]["forecast"]
