@@ -9,10 +9,11 @@ explanations for shop inventory reordering decisions.
 import json
 import os
 from typing import Dict, Any
-from dotenv import load_dotenv
-from openai import OpenAI
-
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 SYSTEM_PROMPT = (
     "You help a small shop buyer. Use only the numbers provided. "

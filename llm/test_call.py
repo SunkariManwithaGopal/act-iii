@@ -6,8 +6,11 @@ Sends a one-sentence greeting prompt and measures response time and token count.
 
 import os
 import sys
-import time
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 from openai import OpenAI
 
 def main():
