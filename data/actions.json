@@ -1,0 +1,302 @@
+[
+  {
+    "sku": "84077",
+    "description": "WORLD WAR 2 GLIDERS ASSTD DESIGNS",
+    "action": "hold",
+    "quantity": 0,
+    "forecast": 511.11,
+    "baseline_forecast": 985.25,
+    "stock": 2297.46,
+    "buffer": 1.2
+  },
+  {
+    "sku": "85099B",
+    "description": "JUMBO BAG RED RETROSPOT",
+    "action": "hold",
+    "quantity": 0,
+    "forecast": 1037.0,
+    "baseline_forecast": 1401.25,
+    "stock": 1645.0,
+    "buffer": 1.2
+  },
+  {
+    "sku": "21212",
+    "description": "PACK OF 72 RETROSPOT CAKE CASES",
+    "action": "reorder",
+    "quantity": 2,
+    "forecast": 524.5,
+    "baseline_forecast": 460.0,
+    "stock": 628.32,
+    "buffer": 1.2
+  },
+  {
+    "sku": "85123A",
+    "description": "WHITE HANGING HEART T-LIGHT HOLDER",
+    "action": "hold",
+    "quantity": 0,
+    "forecast": 913.13,
+    "baseline_forecast": 880.25,
+    "stock": 1254.37,
+    "buffer": 1.2
+  },
+  {
+    "sku": "22197",
+    "description": "SMALL POPCORN HOLDER",
+    "action": "reorder",
+    "quantity": 2932,
+    "forecast": 2443.3,
+    "baseline_forecast": 3318.75,
+    "stock": 0.0,
+    "buffer": 1.2
+  },
+  {
+    "sku": "84879",
+    "description": "ASSORTED COLOUR BIRD ORNAMENT",
+    "action": "reorder",
+    "quantity": 372,
+    "forecast": 598.04,
+    "baseline_forecast": 1266.0,
+    "stock": 345.65,
+    "buffer": 1.2
+  },
+  {
+    "sku": "17003",
+    "description": "BROCADE RING PURSE ",
+    "action": "hold",
+    "quantity": 0,
+    "forecast": 145.95,
+    "baseline_forecast": 257.0,
+    "stock": 914.72,
+    "buffer": 1.2
+  },
+  {
+    "sku": "21977",
+    "description": "PACK OF 60 PINK PAISLEY CAKE CASES",
+    "action": "hold",
+    "quantity": 0,
+    "forecast": 151.1,
+    "baseline_forecast": 337.25,
+    "stock": 386.67,
+    "buffer": 1.2
+  },
+  {
+    "sku": "84991",
+    "description": "60 TEATIME FAIRY CAKE CASES",
+    "action": "hold",
+    "quantity": 0,
+    "forecast": 250.41,
+    "baseline_forecast": 310.0,
+    "stock": 445.39,
+    "buffer": 1.2
+  },
+  {
+    "sku": "22492",
+    "description": "MINI PAINT SET VINTAGE ",
+    "action": "hold",
+    "quantity": 0,
+    "forecast": 1077.05,
+    "baseline_forecast": 776.5,
+    "stock": 1371.49,
+    "buffer": 1.2
+  },
+  {
+    "sku": "15036",
+    "description": "ASSORTED COLOURS SILK FAN",
+    "action": "reorder",
+    "quantity": 95,
+    "forecast": 78.81,
+    "baseline_forecast": 147.75,
+    "stock": 0.0,
+    "buffer": 1.2
+  },
+  {
+    "sku": "84755",
+    "description": "COLOUR GLASS T-LIGHT HOLDER HANGING",
+    "action": "hold",
+    "quantity": 0,
+    "forecast": 216.65,
+    "baseline_forecast": 216.0,
+    "stock": 563.75,
+    "buffer": 1.2
+  },
+  {
+    "sku": "20725",
+    "description": "LUNCH BAG RED RETROSPOT",
+    "action": "reorder",
+    "quantity": 279,
+    "forecast": 433.31,
+    "baseline_forecast": 453.25,
+    "stock": 241.16,
+    "buffer": 1.2
+  },
+  {
+    "sku": "21213",
+    "description": "PACK OF 72 SKULL CAKE CASES",
+    "action": "reorder",
+    "quantity": 154,
+    "forecast": 141.36,
+    "baseline_forecast": 138.5,
+    "stock": 16.4,
+    "buffer": 1.2
+  },
+  {
+    "sku": "22178",
+    "description": "VICTORIAN GLASS HANGING T-LIGHT",
+    "action": "reorder",
+    "quantity": 660,
+    "forecast": 549.64,
+    "baseline_forecast": 466.25,
+    "stock": 0.0,
+    "buffer": 1.2
+  },
+  {
+    "sku": "22386",
+    "description": "JUMBO BAG PINK POLKADOT",
+    "action": "reorder",
+    "quantity": 503,
+    "forecast": 452.25,
+    "baseline_forecast": 431.75,
+    "stock": 39.97,
+    "buffer": 1.2
+  },
+  {
+    "sku": "22616",
+    "description": "PACK OF 12 LONDON TISSUES ",
+    "action": "reorder",
+    "quantity": 230,
+    "forecast": 280.64,
+    "baseline_forecast": 585.5,
+    "stock": 107.62,
+    "buffer": 1.2
+  },
+  {
+    "sku": "21232",
+    "description": "STRAWBERRY CERAMIC TRINKET BOX",
+    "action": "hold",
+    "quantity": 0,
+    "forecast": 257.84,
+    "baseline_forecast": 402.0,
+    "stock": 367.62,
+    "buffer": 1.2
+  },
+  {
+    "sku": "84568",
+    "description": "GIRLS ALPHABET IRON ON PATCHES ",
+    "action": "reorder",
+    "quantity": 169,
+    "forecast": 140.77,
+    "baseline_forecast": 269.5,
+    "stock": 0.0,
+    "buffer": 1.2
+  },
+  {
+    "sku": "21915",
+    "description": "RED  HARMONICA IN BOX ",
+    "action": "reorder",
+    "quantity": 382,
+    "forecast": 372.18,
+    "baseline_forecast": 538.5,
+    "stock": 65.44,
+    "buffer": 1.2
+  },
+  {
+    "sku": "84946",
+    "description": "ANTIQUE SILVER TEA GLASS ETCHED",
+    "action": "reorder",
+    "quantity": 551,
+    "forecast": 903.72,
+    "baseline_forecast": 740.0,
+    "stock": 534.19,
+    "buffer": 1.2
+  },
+  {
+    "sku": "85099F",
+    "description": "JUMBO BAG STRAWBERRY",
+    "action": "reorder",
+    "quantity": 212,
+    "forecast": 176.58,
+    "baseline_forecast": 248.75,
+    "stock": 0.0,
+    "buffer": 1.2
+  },
+  {
+    "sku": "84992",
+    "description": "72 SWEETHEART FAIRY CAKE CASES",
+    "action": "reorder",
+    "quantity": 127,
+    "forecast": 105.74,
+    "baseline_forecast": 230.5,
+    "stock": 0.0,
+    "buffer": 1.2
+  },
+  {
+    "sku": "22086",
+    "description": "PAPER CHAIN KIT 50'S CHRISTMAS ",
+    "action": "reorder",
+    "quantity": 1432,
+    "forecast": 1673.53,
+    "baseline_forecast": 1713.25,
+    "stock": 576.46,
+    "buffer": 1.2
+  },
+  {
+    "sku": "71459",
+    "description": "HANGING JAM JAR T-LIGHT HOLDER",
+    "action": "reorder",
+    "quantity": 58,
+    "forecast": 292.68,
+    "baseline_forecast": 200.0,
+    "stock": 293.55,
+    "buffer": 1.2
+  },
+  {
+    "sku": "21982",
+    "description": "PACK OF 12 SUKI TISSUES ",
+    "action": "hold",
+    "quantity": 0,
+    "forecast": 54.76,
+    "baseline_forecast": 90.25,
+    "stock": 333.97,
+    "buffer": 1.2
+  },
+  {
+    "sku": "84347",
+    "description": "ROTATING SILVER ANGELS T-LIGHT HLDR",
+    "action": "reorder",
+    "quantity": 965,
+    "forecast": 804.01,
+    "baseline_forecast": 807.5,
+    "stock": 0.0,
+    "buffer": 1.2
+  },
+  {
+    "sku": "22355",
+    "description": "CHARLOTTE BAG SUKI DESIGN",
+    "action": "reorder",
+    "quantity": 687,
+    "forecast": 918.8,
+    "baseline_forecast": 573.5,
+    "stock": 416.56,
+    "buffer": 1.2
+  },
+  {
+    "sku": "20724",
+    "description": "RED RETROSPOT CHARLOTTE BAG",
+    "action": "reorder",
+    "quantity": 809,
+    "forecast": 674.14,
+    "baseline_forecast": 573.0,
+    "stock": 0.0,
+    "buffer": 1.2
+  },
+  {
+    "sku": "21080",
+    "description": "SET/20 RED RETROSPOT PAPER NAPKINS ",
+    "action": "hold",
+    "quantity": 0,
+    "forecast": 288.31,
+    "baseline_forecast": 218.0,
+    "stock": 464.56,
+    "buffer": 1.2
+  }
+]

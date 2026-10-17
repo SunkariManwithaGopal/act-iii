@@ -1,0 +1,27 @@
+{
+  "test_weeks": 8,
+  "num_products": 30,
+  "baseline": {
+    "forecast_error": 0.5166,
+    "lost_units": 29722,
+    "lost_value": 39922.05,
+    "avg_leftover_units": 209.03,
+    "leftover_value": 268.19
+  },
+  "seasonal": {
+    "forecast_error": 0.6395,
+    "lost_units": 26933,
+    "lost_value": 34438.94,
+    "avg_leftover_units": 339.33,
+    "leftover_value": 398.4
+  },
+  "assumptions": [
+    "Public sales data from UCI Online Retail II.",
+    "Stock levels are simulated, not real.",
+    "1-week delivery time for all orders.",
+    "Target buffer stock is 1.2x the forecast.",
+    "Average price is used as a stand-in for cost/value.",
+    "Test window represents the peak gift season (last 8 weeks).",
+    "lost_value and leftover_value both use average price as a stand-in; we added lost_value after seeing the first results"
+  ]
+}

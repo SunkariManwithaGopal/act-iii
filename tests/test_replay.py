@@ -17,6 +17,8 @@ def test_replay_outputs_valid():
     # Check no NaNs
     assert not np.isnan(results["baseline"]["forecast_error"])
     assert not np.isnan(results["seasonal"]["avg_leftover_units"])
+    assert not np.isnan(results["baseline"]["lost_value"])
+    assert not np.isnan(results["seasonal"]["lost_value"])
     
     # Check actions length
     assert len(actions) == 3
@@ -30,3 +32,5 @@ def test_zero_demand_no_lost_units():
     results, _ = run_replay(df, products, test_weeks=8)
     assert results["baseline"]["lost_units"] == 0
     assert results["seasonal"]["lost_units"] == 0
+    assert results["baseline"]["lost_value"] == 0.0
+    assert results["seasonal"]["lost_value"] == 0.0

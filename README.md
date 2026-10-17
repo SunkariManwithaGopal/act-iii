@@ -17,7 +17,7 @@ Restock Copilot Lite tells a small shop what to reorder and why. It uses histori
 UCI Online Retail II (CC BY 4.0). Cleaned to top 30 products, weekly aggregation, removing cancellations and non-products.
 
 **Replay Results**  
-Tested on the last 8 weeks (peak season). Baseline error: `[BASELINE_ERROR]`. Seasonal error: `[SEASONAL_ERROR]`. Lost units: Baseline `[BASELINE_LOST]`, Seasonal `[SEASONAL_LOST]`.
+Tested on the last 8 weeks (peak season). Baseline error: 0.5166. Seasonal error: 0.6395. Lost units: Baseline 29,722 ($39,922.05 lost value), Seasonal 26,933 ($34,438.94 lost value). Leftover value: Baseline $268.19, Seasonal $398.40.
 
 **AMD Usage**  
 We use an AMD Token Factory model (OpenAI-compatible API) strictly to generate plain-English explanations for the reorder actions. **The language model does not forecast.** All numbers come from `eval/results.json`.
