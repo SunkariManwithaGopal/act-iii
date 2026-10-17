@@ -15,9 +15,9 @@ def test_get_actions():
     response = client.get("/api/actions")
     assert response.status_code == 200
     data = response.json()
-    assert "actions" in data
-    assert len(data["actions"]) > 0
-    first = data["actions"][0]
+    actions = data if isinstance(data, list) else data.get("actions", [])
+    assert len(actions) > 0
+    first = actions[0]
     assert "sku" in first
     assert "action" in first
     assert "quantity" in first

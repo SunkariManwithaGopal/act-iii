@@ -100,7 +100,12 @@ def explain_action(sku: str):
     Tries calling AMD Token Factory live; falls back to saved explanations on error.
     """
     actions_data = _load_actions_data()
-    actions_list = actions_data.get("actions", [])
+    if isinstance(actions_data, list):
+        actions_list = actions_data
+    elif isinstance(actions_data, dict):
+        actions_list = actions_data.get("actions", [])
+    else:
+        actions_list = []
 
     # Find the matching action for the requested SKU
     target_action = None
