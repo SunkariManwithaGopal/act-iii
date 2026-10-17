@@ -1,0 +1,35 @@
+{
+  "sample": true,
+  "actions": [
+    {
+      "sku": "21212",
+      "description": "PACK OF 72 RETROSPOT CAKE CASES",
+      "action": "reorder",
+      "quantity": 120,
+      "forecast": 145,
+      "baseline_forecast": 95,
+      "stock": 30,
+      "buffer": 1.2
+    },
+    {
+      "sku": "85123A",
+      "description": "WHITE HANGING HEART T-LIGHT HOLDER",
+      "action": "hold",
+      "quantity": 0,
+      "forecast": 40,
+      "baseline_forecast": 42,
+      "stock": 85,
+      "buffer": 1.2
+    },
+    {
+      "sku": "22423",
+      "description": "REGENCY CAKESTAND 3 TIER",
+      "action": "reorder",
+      "quantity": 35,
+      "forecast": 50,
+      "baseline_forecast": 38,
+      "stock": 25,
+      "buffer": 1.2
+    }
+  ]
+}

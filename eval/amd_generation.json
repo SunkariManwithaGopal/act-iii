@@ -1,0 +1,11 @@
+{
+  "device_name": "AMD Ryzen 7 7735HS with Radeon Graphics",
+  "cpu_or_gpu": "CPU",
+  "runtime": "PyTorch / Transformers (Local Execution)",
+  "model": "Local Rule-Constrained LLM Engine (AMD Offline)",
+  "date": "2026-10-17",
+  "count": 30,
+  "saved_count": 20,
+  "template_count": 10,
+  "average_seconds_per_explanation": 0.0001
+}
