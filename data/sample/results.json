@@ -1,0 +1,24 @@
+{
+  "sample": true,
+  "test_weeks": 8,
+  "num_products": 30,
+  "baseline": {
+    "forecast_error": 0.384,
+    "lost_units": 412,
+    "avg_leftover_units": 185.4,
+    "leftover_value": 3420.50
+  },
+  "seasonal": {
+    "forecast_error": 0.218,
+    "lost_units": 186,
+    "avg_leftover_units": 142.1,
+    "leftover_value": 2615.00
+  },
+  "assumptions": [
+    "Weekly review cadence at close of business",
+    "1-week delivery lead time for reorders",
+    "1.2x safety stock buffer multiplier",
+    "Same starting inventory for baseline and seasonal replays",
+    "Top 30 products from UCI Online Retail II dataset"
+  ]
+}
