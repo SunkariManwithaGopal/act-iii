@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restock Copilot Lite</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; padding: 16px; max-width: 1000px; margin: auto; color: #1a1a1a; }
+  h1 { margin-bottom: 4px; }
+  .sub { color: #555; margin-top: 0; }
+  .banner { background: #c0392b; color: #fff; padding: 8px 12px; font-weight: bold; border-radius: 4px; margin: 12px 0; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0 16px; }
+  th, td { border-bottom: 1px solid #ddd; padding: 6px 8px; text-align: left; font-size: 14px; }
+  th { background: #f4f4f4; }
+  button { padding: 4px 10px; cursor: pointer; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; color: #fff; margin-right: 6px; }
+  .live { background: #1e8449; } .saved { background: #7f8c8d; }
+  .expl { margin-top: 4px; font-size: 13px; }
+  ul.assume { font-size: 13px; color: #444; }
+  footer { margin-top: 24px; font-size: 13px; color: #666; border-top: 1px solid #ddd; padding-top: 8px; }
+  .err { color: #c0392b; }
+</style>
+</head>
+<body>
+<h1>Restock Copilot Lite</h1>
+<p class="sub">Forecasts come from a normal forecasting method. The AMD-hosted language model only explains.</p>
+
+<div id="sample"></div>
+
+<h2>Replay results (last 8 weeks)</h2>
+<div id="results">Loading…</div>
+
+<h2>What to do with each product</h2>
+<div class="scroll"><table id="actions">
+  <thead><tr><th>SKU</th><th>Product</th><th>Action</th><th>Qty</th><th>Forecast</th><th>Stock</th><th></th></tr></thead>
+  <tbody></tbody>
+</table></div>
+
+<footer>Public online-retail sales data. Stock is simulated. Not a real shop.</footer>
+
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const num = v => (v === undefined || v === null) ? "–" : Number(v).toLocaleString(undefined, {maximumFractionDigits: 2});
+
+async function loadResults() {
+  const box = document.getElementById("results");
+  try {
+    const r = await (await fetch("/api/results")).json();
+    if (r.sample) document.getElementById("sample").innerHTML = '<div class="banner">SAMPLE DATA</div>';
+    const row = (label, m) => `<tr><td>${label}</td><td>${num(m.forecast_error)}</td><td>${num(m.lost_units)}</td><td>${num(m.avg_leftover_units)}</td><td>${num(m.leftover_value)}</td></tr>`;
+    box.innerHTML = `<div class="scroll"><table>
+      <thead><tr><th>Method</th><th>Forecast error</th><th>Lost units</th><th>Avg leftover units</th><th>Leftover value</th></tr></thead>
+      <tbody>${row("Baseline (4-week average)", r.baseline)}${row("Seasonal", r.seasonal)}</tbody></table></div>
+      <p style="font-size:13px">${r.num_products} products, ${r.test_weeks} test weeks. Lower is better in every column.</p>
+      <ul class="assume">${(r.assumptions || []).map(a => `<li>${esc(a)}</li>`).join("")}</ul>`;
+  } catch (e) { box.innerHTML = '<span class="err">Could not load results.</span>'; }
+}
+
+async function loadActions() {
+  const body = document.querySelector("#actions tbody");
+  try {
+    let data = await (await fetch("/api/actions")).json();
+    if (!Array.isArray(data)) { if (data.sample) document.getElementById("sample").innerHTML = '<div class="banner">SAMPLE DATA</div>'; data = data.actions || []; }
+    body.innerHTML = "";
+    data.forEach(a => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${esc(a.sku)}</td><td>${esc(a.description)}</td><td>${esc(a.action)}</td>
+        <td>${num(a.quantity)}</td><td>${num(a.forecast ?? a.forecast_units)}</td><td>${num(a.stock ?? a.stock_on_hand)}</td>
+        <td><button>Explain</button><div class="expl"></div></td>`;
+      const btn = tr.querySelector("button"), out = tr.querySelector(".expl");
+      btn.onclick = async () => {
+        btn.disabled = true; out.textContent = "Thinking…";
+        try {
+          const r = await (await fetch("/api/explain/" + encodeURIComponent(a.sku), {method: "POST"})).json();
+          const live = r.source === "live";
+          out.innerHTML = `<span class="badge ${live ? "live" : "saved"}">${live ? "live (AMD)" : "saved"}</span>${esc(r.text ?? r.explanation)}`;
+        } catch (e) { out.innerHTML = '<span class="err">Explanation unavailable.</span>'; }
+        btn.disabled = false;
+      };
+      body.appendChild(tr);
+    });
+    if (!data.length) body.innerHTML = '<tr><td colspan="7">No actions yet.</td></tr>';
+  } catch (e) { body.innerHTML = '<tr><td colspan="7" class="err">Could not load actions.</td></tr>'; }
+}
+loadResults(); loadActions();
+</script>
+</body>
+</html>
