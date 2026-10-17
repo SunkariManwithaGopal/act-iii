@@ -10,23 +10,22 @@
 - **Title**: Transparent, Rule-Based Forecasting
 - **Bullets**:
   - Uses public historical sales data (UCI Online Retail II).
-  - Two methods: 4-week baseline vs. seasonal trend adjustment.
-  - Simulates 8-week replay to measure lost sales and leftover stock.
-- **Speaker Notes**: "We don't use black-box AI for numbers. We use proven statistical methods and prove them via replay."
+  - Evaluated three methods: 4-week baseline, seasonal ratio, and smoothed trend (alpha 0.2).
+  - Smoothed chosen on two pre-test validation windows (error 0.5796 vs baseline 0.6063).
+- **Speaker Notes**: "We evaluated three methods without black-box prediction: a 4-week baseline, a seasonal ratio (which added error on two years of data), and a smoothed exponential average (alpha 0.2). Smoothed had lower error on pre-test validation, so by pre-fixed rule it drives orders."
 
 # Slide 3: Results & Limits
 - **Title**: Measured Outcomes
 - **Bullets**:
-  - Forecast error: Baseline 0.5166 vs. Seasonal 0.6395.
-  - Lost units: Seasonal reduced lost units to 26,933 ($34,438.94) vs. Baseline 29,722 ($39,922.05).
-  - Leftover value: Baseline $268.19 vs. Seasonal $398.40.
-  - Limit: Uses simulated stock and historical data.
-- **Speaker Notes**: "Here are the actual numbers from our eval: the baseline achieved lower forecast error (0.5166 vs 0.6395), but the seasonal method reduced lost units by 2,789 in peak season simulation. We are honest about trade-offs and simulated stock."
+  - Forecast error: Smoothed 0.5077 vs. Baseline 0.5166 vs. Seasonal 0.6395 (margin is small, not claimed significant).
+  - Lost units & leftover stock: Smoothed 32,728 lost units (£46,977.69 total) / 180.19 leftover units (£218.08/wk); Baseline 29,722 lost (£39,922.05) / 209.03 leftover (£268.19/wk); Seasonal 26,933 lost (£34,438.94) / 339.33 leftover (£398.40/wk).
+  - Limits: No holding cost, margin or lead-time data; 30 products and 8 weeks; stock is simulated; price is cost stand-in; test window is 8-week pre-Christmas build-up starting 2011-10-10.
+- **Speaker Notes**: "Results are mixed: smoothed had lowest forecast error, but left the most demand unmet (23.6% vs baseline 21.5% and seasonal 19.4%). Smoothed won the pre-fixed lowest-error rule to drive orders, but we do not say it is better for the business. Lost value is an 8-week total and leftover value is a weekly snapshot—they cannot be subtracted, and no method is a net win."
 
-# Slide 4: AMD Usage & Next Steps
+# Slide 4: Model Serving & Next Steps
 - **Title**: AI for Explanation, Not Prediction
 - **Bullets**:
-  - AMD Token Factory translates actions into plain English.
+  - [AMD_SERVING] translates actions into plain English.
   - The language model NEVER forecasts or alters numbers.
   - Next: Real-time supplier lead times and multi-location support.
-- **Speaker Notes**: "AI's best role here is as a translator, making data actionable for the human buyer."
+- **Speaker Notes**: "AI's best role here is as a translator, making data actionable for the human buyer via [AMD_SERVING]."
