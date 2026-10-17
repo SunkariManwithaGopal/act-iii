@@ -12,31 +12,19 @@ def baseline(s: pd.Series, t: int) -> float:
     val = float(window.mean())
     return 0.0 if np.isnan(val) else val
 
-def seasonal(s: pd.Series, t: int) -> float:
+def seasonal(s: pd.Series, t: int, alpha: float = 0.4) -> float:
     """
-    Exponential weighted mean of recent trends, adjusted by the ratio
-    of the same week last year (clipped to 0.5x–2.0x to prevent extreme outliers).
+    Recent level (exponential weighted mean of all past weeks) times
+    last year's same-week ratio, clipped to 0.5x-2.0x. Uses only s.iloc[:t].
     """
-    start = max(0, t - 4)
-    recent = s.iloc[start:t]
-    if len(recent) == 0:
+    past = s.iloc[:t]
+    if len(past) == 0:
         return 0.0
-    
-    recent_trend = recent.ewm(span=4).mean().iloc[-1]
-    
-    if t >= 52:
-        val_last_year = float(s.iloc[t - 52])
-        start_ly = max(0, t - 52 - 4)
-        ly_window = s.iloc[start_ly:t - 52]
-        ly_mean = ly_window.mean() if len(ly_window) > 0 else 0.0
-        
-        if ly_mean > 0 and not np.isnan(ly_mean):
-            ratio = val_last_year / ly_mean
-            ratio = float(np.clip(ratio, 0.5, 2.0))
-            forecast = recent_trend * ratio
-        else:
-            forecast = recent_trend
-    else:
-        forecast = recent_trend
-        
-    return 0.0 if np.isnan(forecast) else float(forecast)
+    level = past.ewm(alpha=alpha, adjust=False).mean().iloc[-1]
+    ratio = 1.0
+    if t >= 56:
+        base = s.iloc[t - 56:t - 52].mean()
+        if base > 0 and not np.isnan(base):
+            ratio = float(np.clip(s.iloc[t - 52] / base, 0.5, 2.0))
+    out = level * ratio
+    return 0.0 if np.isnan(out) else float(out)
