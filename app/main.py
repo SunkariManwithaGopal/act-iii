@@ -130,9 +130,16 @@ def explain_action(sku: str):
         # 2. On error, fallback to pre-saved explanation from data/saved_explanations.json
         saved = _load_saved_explanations()
         if sku in saved:
+            entry = saved[sku]
+            if isinstance(entry, dict):
+                return {
+                    "sku": sku,
+                    "text": entry.get("text", "Explanation not available."),
+                    "source": entry.get("source", "saved")
+                }
             return {
                 "sku": sku,
-                "text": saved[sku],
+                "text": str(entry),
                 "source": "saved"
             }
         

@@ -56,7 +56,7 @@ def test_explain_fallback_on_error(mock_explain):
     assert response.status_code == 200
     data = response.json()
     assert data["sku"] == "21212"
-    assert data["source"] == "saved"
+    assert data["source"] in ["saved", "template"]
     assert len(data["text"]) > 10
 
 
