@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ForecastContract",
+  "description": "Weekly unit forecast for a single SKU",
+  "type": "object",
+  "required": [
+    "sku",
+    "week",
+    "predicted_units",
+    "low",
+    "high"
+  ],
+  "properties": {
+    "sku": {
+      "type": "string"
+    },
+    "week": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "predicted_units": {
+      "type": "number",
+      "minimum": 0
+    },
+    "low": {
+      "type": "number"
+    },
+    "high": {
+      "type": "number"
+    }
+  },
+  "additionalProperties": false
+}

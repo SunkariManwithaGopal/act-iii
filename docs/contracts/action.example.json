@@ -1,0 +1,9 @@
+{
+  "sku": "85123A",
+  "description": "WHITE HANGING HEART T-LIGHT HOLDER",
+  "action": "reorder",
+  "quantity": 100.0,
+  "forecast_units": 45.0,
+  "stock_on_hand": 10.0,
+  "buffer": 15.0
+}

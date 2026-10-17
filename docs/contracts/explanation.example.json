@@ -1,0 +1,6 @@
+{
+  "sku": "85123A",
+  "text": "Reorder 100 units because stock on hand (10) is below forecasted weekly demand (45) plus safety buffer (15).",
+  "source": "live",
+  "numbers_check_passed": true
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ActionContract",
+  "description": "Inventory action decision for a single SKU",
+  "type": "object",
+  "required": [
+    "sku",
+    "description",
+    "action",
+    "quantity",
+    "forecast_units",
+    "stock_on_hand",
+    "buffer"
+  ],
+  "properties": {
+    "sku": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "reorder",
+        "hold",
+        "discount"
+      ]
+    },
+    "quantity": {
+      "type": "number",
+      "minimum": 0
+    },
+    "forecast_units": {
+      "type": "number"
+    },
+    "stock_on_hand": {
+      "type": "number"
+    },
+    "buffer": {
+      "type": "number"
+    }
+  },
+  "additionalProperties": false
+}

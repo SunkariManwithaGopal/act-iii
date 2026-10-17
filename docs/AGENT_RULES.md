@@ -1,8 +1,13 @@
-# Team rules
+# Agent Rules
 
-- Never commit API keys, passwords, SSH keys, cloud credentials, IP addresses, or `.env` files.
-- Each teammate works in their own Git branch for feature work.
-- Open a pull request for review before merging feature work into `main`.
-- Run relevant tests before asking for review.
-- Keep generated or raw local data out of Git unless the team explicitly agrees to commit a small sample.
-- The web browser must call only the backend API; it must never call the AMD language-model server directly.
+Rules for all teammates' AI agents working on Restock Copilot:
+
+- Edit only files in your own folder.
+- Never change docs/contracts/.
+- Never commit .env, keys, data files or model files.
+- Run pytest before saying a task is done.
+- Add no new libraries without asking.
+- Keep each change small and explain it in 3 lines.
+- For any ML code: never use a random split; training dates must be earlier than test dates; add a test for it.
+- Never invent numbers; every number in docs must come from a file in eval/.
+- Ask before running terminal commands, git push, or anything that deletes files.

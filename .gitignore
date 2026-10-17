@@ -1,14 +1,25 @@
-# Python and test cache
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Secrets & environment variables
+.env
+
+# Python bytecode & cache
 __pycache__/
 *.py[cod]
+*$py.class
 .pytest_cache/
-.venv/
 
-# Secrets: never commit these
-.env
-.env.*
-*.pem
-*.key
-
-# Local data and generated files
+# Raw and large data files (keep data/sample/)
 data/raw/
+*.csv
+*.parquet
+*.xlsx
+!data/sample/**
+!.gitkeep
+
+# System files
+.DS_Store
+Thumbs.db
