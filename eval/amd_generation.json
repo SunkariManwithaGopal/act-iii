@@ -1,11 +1,26 @@
 {
-  "device_name": "AMD Ryzen 7 7735HS with Radeon Graphics",
-  "cpu_or_gpu": "CPU",
-  "runtime": "PyTorch / Transformers (Local Execution)",
-  "model": "Local Rule-Constrained LLM Engine (AMD Offline)",
-  "date": "2026-10-17",
+  "generation_method": "open language model run locally on the CPU",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_source": "Hugging Face Hub (downloaded once, then cached)",
+  "torch_version": "2.14.1+cpu",
+  "cuda_available": false,
+  "device": "cpu",
+  "cpu_name": "AMD Ryzen 7 7735HS with Radeon Graphics",
+  "hf_hub_offline": "1",
   "count": 30,
-  "saved_count": 20,
-  "template_count": 10,
-  "average_seconds_per_explanation": 0.0001
+  "saved_count": 29,
+  "template_count": 1,
+  "rejection_reasons": {
+    "description": 1
+  },
+  "rejected_examples": [
+    {
+      "sku": "21915",
+      "reason": "description",
+      "model_reply": "The forecast for RED HARMONICA IN BOX next week is 758.46 units. The target stock with a 1.2 buffer is 910.15 units, and simulated stock is 0.0 units. The shortfall is 910.15 units, suggesting a suggested order of 911 units."
+    }
+  ],
+  "avg_seconds_per_explanation": 37.75,
+  "avg_new_tokens": 77.2,
+  "generated_at": "2026-10-18T06:44:53+00:00"
 }
