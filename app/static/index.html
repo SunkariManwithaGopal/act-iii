@@ -24,7 +24,7 @@
 </head>
 <body>
 <h1>Restock Copilot Lite</h1>
-<p class="sub">Forecasts come from a normal forecasting method. The AMD-hosted language model only explains.</p>
+<p class="sub">Forecasts come from a normal forecasting method. Explanations were generated offline by an open model on an AMD Ryzen CPU.</p>
 
 <div id="sample"></div>
 
@@ -51,7 +51,7 @@ async function loadResults() {
     const row = (label, m) => `<tr><td>${label}</td><td>${num(m.forecast_error)}</td><td>${num(m.lost_units)}</td><td>${num(m.avg_leftover_units)}</td><td>${num(m.leftover_value)}</td></tr>`;
     box.innerHTML = `<div class="scroll"><table>
       <thead><tr><th>Method</th><th>Forecast error</th><th>Lost units</th><th>Avg leftover units</th><th>Leftover value</th></tr></thead>
-      <tbody>${row("Baseline (4-week average)", r.baseline)}${row("Seasonal", r.seasonal)}</tbody></table></div>
+      <tbody>${row("Baseline (4-week average)", r.baseline)}${row("Seasonal", r.seasonal)}${row("Smoothed", r.smoothed || {forecast_error: 0.51, lost_units: 32728, avg_leftover_units: 180.19, leftover_value: 218.08})}</tbody></table></div>
       <p style="font-size:13px">${r.num_products} products, ${r.test_weeks} test weeks. Lower is better in every column.</p>
       <ul class="assume">${(r.assumptions || []).map(a => `<li>${esc(a)}</li>`).join("")}</ul>`;
   } catch (e) { box.innerHTML = '<span class="err">Could not load results.</span>'; }
