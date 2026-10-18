@@ -1,122 +1,122 @@
 {
   "84077": {
-    "text": "Reorder 536 units of WORLD WAR 2 GLIDERS ASSTD DESIGNS because stock on hand (905.25) is below the 1.2 buffer target for forecasted demand (1200.63). Placing this order covers the expected customer sales over the coming week. This preventative restock keeps inventory available and avoids lost sales.",
-    "source": "template"
+    "text": "The forecast for WORLD WAR 2 GLIDERS ASSTD DESIGNS next week is 1200.63 units. The target stock with a 1.2 buffer is 1440.76 units, and simulated stock is 905.25 units. The shortfall is 535.51 units, suggesting a suggested order of 536 units.",
+    "source": "saved"
   },
   "85099B": {
-    "text": "Forecasted demand for JUMBO BAG RED RETROSPOT is 1210.55 units against current stock of 450.83. We recommend placing a reorder of 1002 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for JUMBO BAG RED RETROSPOT next week is 1210.55 units. The target stock with a 1.2 buffer is 1452.66 units, and simulated stock is 450.83 units. The shortfall is 1001.83 units, suggesting a suggested order of 1002 units.",
     "source": "saved"
   },
   "21212": {
-    "text": "Reorder 544 units of PACK OF 72 RETROSPOT CAKE CASES because stock on hand (120.64) is below the 1.2 buffer target for forecasted demand (553.62). Placing this order covers the expected customer sales over the coming week. This preventative restock keeps inventory available and avoids lost sales.",
-    "source": "template"
+    "text": "The forecast for PACK OF 72 RETROSPOT CAKE CASES next week is 553.62 units. The target stock with a 1.2 buffer is 664.34 units, and simulated stock is 120.64 units. The suggested order is 544 units.",
+    "source": "saved"
   },
   "85123A": {
-    "text": "Forecasted demand for WHITE HANGING HEART T-LIGHT HOLDER is 804.84 units against current stock of 263.46. We recommend placing a reorder of 703 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for WHITE HANGING HEART T-LIGHT HOLDER next week is 804.84 units. The target stock with a 1.2 buffer is 965.81 units, and simulated stock is 263.46 units. The shortfall is 702.35 units, suggesting a suggested order of 703 units.",
     "source": "saved"
   },
   "22197": {
-    "text": "Forecasted demand for SMALL POPCORN HOLDER is 2460.33 units against current stock of 0.0. We recommend placing a reorder of 2953 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for SMALL POPCORN HOLDER next week is 2460.33 units. The target stock with a 1.2 buffer is 2952.4 units, and simulated stock is 0.0 units. The shortfall is 2952.4 units, suggesting a suggested order of 2953 units.",
     "source": "saved"
   },
   "84879": {
-    "text": "Forecasted demand for ASSORTED COLOUR BIRD ORNAMENT is 1021.63 units against current stock of 293.55. We recommend placing a reorder of 933 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for ASSORTED COLOUR BIRD ORNAMENT next week is 1021.63 units. The target stock with a 1.2 buffer is 1225.96 units, and simulated stock is 293.55 units. The suggested order is 933 units.",
     "source": "saved"
   },
   "17003": {
-    "text": "Forecasted demand for BROCADE RING PURSE is 367.77 units against current stock of 382.65. We recommend placing a reorder of 59 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for BROCADE RING PURSE next week is 367.77 units. The target stock with a 1.2 buffer is 441.32 units, and simulated stock is 382.65 units. The shortfall is 58.67 units, suggesting a suggested order of 59 units.",
     "source": "saved"
   },
   "21977": {
-    "text": "Reorder 213 units of PACK OF 60 PINK PAISLEY CAKE CASES because stock on hand (181.05) is below the 1.2 buffer target for forecasted demand (327.83). Placing this order covers the expected customer sales over the coming week. This preventative restock keeps inventory available and avoids lost sales.",
-    "source": "template"
+    "text": "The forecast for PACK OF 60 PINK PAISLEY CAKE CASES next week is 327.83 units. The target stock with a 1.2 buffer is 393.4 units, and simulated stock is 181.05 units. The suggested order is 213 units.",
+    "source": "saved"
   },
   "84991": {
-    "text": "Reorder 77 units of 60 TEATIME FAIRY CAKE CASES because stock on hand (322.24) is below the 1.2 buffer target for forecasted demand (332.69). Placing this order covers the expected customer sales over the coming week. This preventative restock keeps inventory available and avoids lost sales.",
-    "source": "template"
+    "text": "The forecast for 60 TEATIME FAIRY CAKE CASES next week is 332.69 units. The target stock with a 1.2 buffer is 399.23 units, and simulated stock is 322.24 units. The suggested order is 77 units.",
+    "source": "saved"
   },
   "22492": {
-    "text": "Forecasted demand for MINI PAINT SET VINTAGE is 638.55 units against current stock of 566.53. We recommend placing a reorder of 200 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for MINI PAINT SET VINTAGE next week is 638.55 units. The target stock with a 1.2 buffer is 766.26 units, and simulated stock is 566.53 units. The shortfall is 199.73 units, suggesting a suggested order of 200 units.",
     "source": "saved"
   },
   "15036": {
-    "text": "Forecasted demand for ASSORTED COLOURS SILK FAN is 176.8 units against current stock of 79.29. We recommend placing a reorder of 133 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for ASSORTED COLOURS SILK FAN next week is 176.8 units. The target stock with a 1.2 buffer is 212.16 units, and simulated stock is 79.29 units. The shortfall is 132.87 units, and the suggested order is 133 units.",
     "source": "saved"
   },
   "84755": {
-    "text": "Current stock of COLOUR GLASS T-LIGHT HOLDER HANGING is 240.5 units while forecasted demand is 195.0. Available inventory covers the 1.2 safety buffer without requiring new stock. We recommend holding existing stock and re-evaluating demand next week.",
+    "text": "The forecast for COLOUR GLASS T-LIGHT HOLDER HANGING next week is 195.0 units. The target stock with a 1.2 buffer is 234.0 units, and simulated stock is 240.5 units. There is no shortfall, so the suggested order is 0 units.",
     "source": "saved"
   },
   "20725": {
-    "text": "Forecasted demand for LUNCH BAG RED RETROSPOT is 395.71 units against current stock of 163.26. We recommend placing a reorder of 312 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for LUNCH BAG RED RETROSPOT next week is 395.71 units. The target stock with a 1.2 buffer is 474.85 units, and simulated stock is 163.26 units. The shortfall is 311.59 units, suggesting a suggested order of 312 units.",
     "source": "saved"
   },
   "21213": {
-    "text": "Reorder 204 units of PACK OF 72 SKULL CAKE CASES because stock on hand (74.16) is below the 1.2 buffer target for forecasted demand (231.44). Placing this order covers the expected customer sales over the coming week. This preventative restock keeps inventory available and avoids lost sales.",
-    "source": "template"
+    "text": "The forecast for PACK OF 72 SKULL CAKE CASES next week is 231.44 units. The target stock with a 1.2 buffer is 277.73 units, and simulated stock is 74.16 units. The suggested order is 204 units.",
+    "source": "saved"
   },
   "22178": {
-    "text": "Forecasted demand for VICTORIAN GLASS HANGING T-LIGHT is 525.32 units against current stock of 0.0. We recommend placing a reorder of 631 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for VICTORIAN GLASS HANGING T-LIGHT next week is 525.32 units. The target stock with a 1.2 buffer is 630.38 units, and simulated stock is 0.0 units. The shortfall is 630.38 units, suggesting a suggested order of 631 units.",
     "source": "saved"
   },
   "22386": {
-    "text": "Forecasted demand for JUMBO BAG PINK POLKADOT is 489.37 units against current stock of 167.26. We recommend placing a reorder of 420 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for JUMBO BAG PINK POLKADOT next week is 489.37 units. The target stock with a 1.2 buffer is 587.24 units, and simulated stock is 167.26 units. The suggested order is 420 units.",
     "source": "saved"
   },
   "22616": {
-    "text": "Reorder 632 units of PACK OF 12 LONDON TISSUES because stock on hand (0.0) is below the 1.2 buffer target for forecasted demand (526.32). Placing this order covers the expected customer sales over the coming week. This preventative restock keeps inventory available and avoids lost sales.",
-    "source": "template"
+    "text": "The forecast for PACK OF 12 LONDON TISSUES next week is 526.32 units. The target stock with a 1.2 buffer is 631.58 units, and simulated stock is 0.0 units. The shortfall is 631.58 units, suggesting a suggested order of 632 units.",
+    "source": "saved"
   },
   "21232": {
-    "text": "Forecasted demand for STRAWBERRY CERAMIC TRINKET BOX is 334.33 units against current stock of 0.0. We recommend placing a reorder of 402 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for STRAWBERRY CERAMIC TRINKET BOX next week is 334.33 units. The target stock with a 1.2 buffer is 401.2 units, and simulated stock is 0.0 units. The shortfall is 401.2 units, suggesting a suggested order of 402 units.",
     "source": "saved"
   },
   "84568": {
-    "text": "Forecasted demand for GIRLS ALPHABET IRON ON PATCHES is 217.88 units against current stock of 0.0. We recommend placing a reorder of 262 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for GIRLS ALPHABET IRON ON PATCHES next week is 217.88 units. The target stock with a 1.2 buffer is 261.46 units, and simulated stock is 0.0 units. The shortfall is 261.46 units, suggesting a suggested order of 262 units.",
     "source": "saved"
   },
   "21915": {
-    "text": "Forecasted demand for RED  HARMONICA IN BOX is 758.46 units against current stock of 0.0. We recommend placing a reorder of 911 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
-    "source": "saved"
+    "text": "Forecast demand for RED  HARMONICA IN BOX  next week is 758.46 units. The target stock with a 1.2 buffer is 910.15 units; simulated stock is 0.0. Suggested order: 911 units.",
+    "source": "template"
   },
   "84946": {
-    "text": "Forecasted demand for ANTIQUE SILVER TEA GLASS ETCHED is 589.25 units against current stock of 248.18. We recommend placing a reorder of 459 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for ANTIQUE SILVER TEA GLASS ETCHED next week is 589.25 units. The target stock with a 1.2 buffer is 707.1 units, and simulated stock is 248.18 units. The shortfall is 458.92 units, and the suggested order is 459 units.",
     "source": "saved"
   },
   "85099F": {
-    "text": "Forecasted demand for JUMBO BAG STRAWBERRY is 288.98 units against current stock of 0.0. We recommend placing a reorder of 347 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for JUMBO BAG STRAWBERRY next week is 288.98 units. The target stock with a 1.2 buffer is 346.78 units, and simulated stock is 0.0 units. The shortfall is 346.78 units, suggesting a suggested order of 347 units.",
     "source": "saved"
   },
   "84992": {
-    "text": "Reorder 207 units of 72 SWEETHEART FAIRY CAKE CASES because stock on hand (55.08) is below the 1.2 buffer target for forecasted demand (217.85). Placing this order covers the expected customer sales over the coming week. This preventative restock keeps inventory available and avoids lost sales.",
-    "source": "template"
+    "text": "The forecast for 72 Sweetheart Fairy Cake Cases next week is 217.85 units. The target stock with a 1.2 buffer is 261.42 units, and simulated stock is 55.08 units. The shortfall is 206.34 units, suggesting a suggested order of 207 units.",
+    "source": "saved"
   },
   "22086": {
-    "text": "Reorder 1623 units of PAPER CHAIN KIT 50'S CHRISTMAS because stock on hand (0.0) is below the 1.2 buffer target for forecasted demand (1352.43). Placing this order covers the expected customer sales over the coming week. This preventative restock keeps inventory available and avoids lost sales.",
-    "source": "template"
+    "text": "The forecast for PAPER CHAIN KIT 50's CHRISTMAS next week is 1352.43 units. The target stock with a 1.2 buffer is 1622.92 units, and simulated stock is 0.0 units. The shortfall is 1622.92 units, suggesting a suggested order of 1623 units.",
+    "source": "saved"
   },
   "71459": {
-    "text": "Forecasted demand for HANGING JAM JAR T-LIGHT HOLDER is 172.81 units against current stock of 98.02. We recommend placing a reorder of 110 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for HANGING JAM JAR T-LIGHT HOLDER next week is 172.81 units. The target stock with a 1.2 buffer is 207.37 units, and simulated stock is 98.02 units. The suggested order is 110 units.",
     "source": "saved"
   },
   "21982": {
-    "text": "Current stock on hand for PACK OF 12 SUKI TISSUES is 154.55 units against a forecasted demand of 126.44. Existing inventory already satisfies the 1.2 safety buffer requirement. We recommend holding current stock and reviewing sales during the next cycle.",
-    "source": "template"
+    "text": "The forecast for a PACK OF 12 SUKI TISSUES next week is 126.44 units. The target stock with a 1.2 buffer is 151.73 units, and simulated stock is 154.55 units. There is no shortfall, so the suggested order is 0 units.",
+    "source": "saved"
   },
   "84347": {
-    "text": "Forecasted demand for ROTATING SILVER ANGELS T-LIGHT HLDR is 630.85 units against current stock of 0.0. We recommend placing a reorder of 758 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for ROTATING SILVER ANGELS T-LIGHT HLDR next week is 630.85 units. The target stock with a 1.2 buffer is 757.02 units, and simulated stock is 0.0 units. The shortfall is 757.02 units, suggesting a suggested order of 758 units.",
     "source": "saved"
   },
   "22355": {
-    "text": "Forecasted demand for CHARLOTTE BAG SUKI DESIGN is 488.71 units against current stock of 0.0. We recommend placing a reorder of 587 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for CHARLOTTE BAG SUKI DESIGN next week is 488.71 units. The target stock with a 1.2 buffer is 586.45 units, and simulated stock is 0.0 units. The shortfall is 586.45 units, suggesting a suggested order of 587 units.",
     "source": "saved"
   },
   "20724": {
-    "text": "Forecasted demand for RED RETROSPOT CHARLOTTE BAG is 490.93 units against current stock of 21.4. We recommend placing a reorder of 568 units to maintain the 1.2 safety buffer. This order prevents lost customer sales over the next review period.",
+    "text": "The forecast for RED RETROSPOT CHARLOTTE BAG next week is 490.93 units. The target stock with a 1.2 buffer is 589.12 units, and simulated stock is 21.4 units. The shortfall is 567.72 units, and the suggested order is 568 units.",
     "source": "saved"
   },
   "21080": {
-    "text": "Reorder 93 units of SET/20 RED RETROSPOT PAPER NAPKINS because stock on hand (149.65) is below the 1.2 buffer target for forecasted demand (202.04). Placing this order covers the expected customer sales over the coming week. This preventative restock keeps inventory available and avoids lost sales.",
-    "source": "template"
+    "text": "The forecast for SET/20 RED RETROSPOT PAPER NAPKINS next week is 202.04 units. The target stock with a 1.2 buffer is 242.45 units, and simulated stock is 149.65 units. The suggested order is 93 units.",
+    "source": "saved"
   }
 }
