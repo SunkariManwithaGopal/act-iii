@@ -4,23 +4,130 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Restock Copilot Lite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f1f5f9; color: #0f172a; margin: 0; padding: 2rem 1rem; line-height: 1.5; }
-  body > div { max-width: 1200px; margin: 0 auto; background: #ffffff; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
-  h1 { font-size: 2.25rem; font-weight: 700; margin-top: 0; margin-bottom: 0.5rem; letter-spacing: -0.025em; }
-  p:first-of-type { font-size: 1.125rem; color: #64748b; margin-top: 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
-  h2 { font-size: 1.5rem; font-weight: 600; margin-top: 3rem; margin-bottom: 1rem; }
-  table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; font-size: 0.95rem; }
-  th { text-align: left; padding: 1rem; background-color: #f8fafc; color: #475569; font-weight: 600; border-bottom: 2px solid #e2e8f0; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
-  td { padding: 1rem; border-bottom: 1px solid #e2e8f0; vertical-align: middle; }
+  /* ── Reset & base ─────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4ff 0%, #e2e8f0 100%);
+    color: #0f172a; margin: 0; padding: 2.5rem 1.25rem; line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── Card wrapper ─────────────────────────────────────────────── */
+  .card {
+    max-width: 1200px; margin: 0 auto; background: #ffffff;
+    padding: 2.5rem 3rem 2rem; border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.07);
+  }
+
+  /* ── Header ───────────────────────────────────────────────────── */
+  h1 {
+    font-size: 2rem; font-weight: 700; letter-spacing: -0.03em;
+    margin-bottom: 0.25rem;
+    background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .sub {
+    font-size: 1rem; color: #64748b; margin-top: 0;
+    border-bottom: 1px solid #e2e8f0; padding-bottom: 1.25rem; margin-bottom: 2rem;
+  }
+
+  /* ── Section headings ─────────────────────────────────────────── */
+  h2 {
+    font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 0.75rem;
+    color: #1e293b; letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  h2::before {
+    content: ''; display: inline-block; width: 4px; height: 1.25rem;
+    background: linear-gradient(180deg, #0ea5e9, #6366f1); border-radius: 2px;
+  }
+
+  /* ── Sample banner ────────────────────────────────────────────── */
+  .banner {
+    background: linear-gradient(135deg, #f97316, #ef4444); color: #fff;
+    padding: 0.625rem 1rem; font-weight: 600; border-radius: 8px;
+    margin: 0.75rem 0 1.5rem; font-size: 0.85rem; letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ── Tables ───────────────────────────────────────────────────── */
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.9rem; }
+  th {
+    text-align: left; padding: 0.75rem 1rem;
+    background-color: #f8fafc; color: #475569; font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+    text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.06em;
+  }
+  td { padding: 0.75rem 1rem; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+  tbody tr { transition: background-color 0.15s ease; }
   tbody tr:hover { background-color: #f8fafc; }
-  ul { background-color: #f8fafc; padding: 1.5rem 1.5rem 1.5rem 3rem; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 0.875rem; color: #475569; }
-  li { margin-bottom: 0.5rem; }
-  button { background-color: #0ea5e9; color: white; border: none; padding: 0.625rem 1.25rem; border-radius: 6px; font-weight: 500; cursor: pointer; transition: background-color 0.2s; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
-  button:hover { background-color: #0284c7; }
+
+  /* ── Buttons ──────────────────────────────────────────────────── */
+  button {
+    background: linear-gradient(135deg, #0ea5e9, #6366f1); color: white;
+    border: none; padding: 0.5rem 1.125rem; border-radius: 8px;
+    font-weight: 500; font-size: 0.8rem; cursor: pointer;
+    transition: all 0.2s ease; letter-spacing: 0.01em;
+    box-shadow: 0 1px 3px rgba(14,165,233,0.25);
+  }
+  button:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(14,165,233,0.3); }
+  button:active { transform: translateY(0); }
+  button:disabled { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  /* ── Explanation badges ───────────────────────────────────────── */
+  .badge {
+    display: inline-block; padding: 2px 10px; border-radius: 999px;
+    font-size: 0.7rem; font-weight: 600; color: #fff;
+    margin-right: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em;
+    vertical-align: middle;
+  }
+  .live { background: linear-gradient(135deg, #10b981, #059669); }
+  .saved { background: linear-gradient(135deg, #64748b, #475569); }
+  .expl {
+    margin-top: 0.5rem; font-size: 0.82rem; color: #475569;
+    line-height: 1.5; animation: fadeIn 0.3s ease;
+  }
+
+  /* ── Assumptions list ─────────────────────────────────────────── */
+  ul, ul.assume {
+    background-color: #f8fafc; padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+    border-radius: 10px; border: 1px solid #e2e8f0;
+    font-size: 0.82rem; color: #475569; list-style-type: '→  ';
+  }
+  li { margin-bottom: 0.4rem; padding-left: 0.25rem; }
+  li:last-child { margin-bottom: 0; }
+
+  /* ── Footer ───────────────────────────────────────────────────── */
+  footer {
+    margin-top: 2.5rem; font-size: 0.78rem; color: #94a3b8;
+    border-top: 1px solid #e2e8f0; padding-top: 1rem;
+    text-align: center; letter-spacing: 0.01em;
+  }
+
+  /* ── Error state ──────────────────────────────────────────────── */
+  .err { color: #dc2626; font-weight: 500; }
+
+  /* ── Animations ───────────────────────────────────────────────── */
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── Responsive ───────────────────────────────────────────────── */
+  @media (max-width: 640px) {
+    body { padding: 1rem 0.5rem; }
+    .card { padding: 1.5rem 1.25rem 1.25rem; border-radius: 12px; }
+    h1 { font-size: 1.5rem; }
+    th, td { padding: 0.5rem 0.625rem; font-size: 0.8rem; }
+  }
 </style>
 </head>
 <body>
+<div class="card">
 <h1>Restock Copilot Lite</h1>
 <p class="sub">Forecasts come from a normal forecasting method. Explanations were generated offline by an open model on an AMD Ryzen CPU.</p>
 
@@ -36,6 +143,7 @@
 </table></div>
 
 <footer>Public online-retail sales data. Stock is simulated. Not a real shop.</footer>
+</div>
 
 <script>
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -85,3 +193,4 @@ loadResults(); loadActions();
 </script>
 </body>
 </html>
+
