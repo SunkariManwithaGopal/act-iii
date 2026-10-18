@@ -22,10 +22,6 @@
   - Limits: No holding cost, margin or lead-time data; 30 products and 8 weeks; stock is simulated; price is cost stand-in; test window is 8-week pre-Christmas build-up starting 2011-10-10.
 - **Speaker Notes**: "Results are mixed: smoothed had lowest forecast error, but left the most demand unmet (23.6% vs baseline 21.5% and seasonal 19.4%). Smoothed won the pre-fixed lowest-error rule to drive orders, but we do not say it is better for the business. Lost value is an 8-week total and leftover value is a weekly snapshot—they cannot be subtracted, and no method is a net win."
 
-# Slide 4: Model Serving & Next Steps
-- **Title**: AI for Explanation, Not Prediction
-- **Bullets**:
-  - Plain-language explanations were generated offline by the open model Qwen/Qwen2.5-1.5B-Instruct (Apache-2.0) on the CPU of an AMD Ryzen 7 7735HS laptop (PyTorch / Transformers, no network calls at generation time), then saved and served by the hosted app. The hosted app does not call a model and does not run on AMD hardware. 29 of 30 explanations came from the model and passed automatic checks; 1 uses a fixed factual template. translates actions into plain English.
-  - The language model NEVER forecasts or alters numbers.
-  - Next: Real-time supplier lead times and multi-location support.
-- **Speaker Notes**: "AI's best role here is as a translator, making data actionable for the human buyer via Plain-language explanations were generated offline by the open model Qwen/Qwen2.5-1.5B-Instruct (Apache-2.0) on the CPU of an AMD Ryzen 7 7735HS laptop (PyTorch / Transformers, no network calls at generation time), then saved and served by the hosted app. The hosted app does not call a model and does not run on AMD hardware. 29 of 30 explanations came from the model and passed automatic checks; 1 uses a fixed factual template.."
+## How the explanations work and next steps
+- Offline CPU generation using Qwen2.5-1.5B (checked by scripts).
+- Next step: deploy a larger model on AMD GPU hardware once access exists.

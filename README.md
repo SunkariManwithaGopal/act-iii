@@ -6,9 +6,8 @@ Restock Copilot Lite tells a small shop what to reorder and why. It uses histori
 **How to run locally**  
 1. `python -m venv .venv && source .venv/bin/activate` (Windows: `.venv\Scripts\activate`)
 2. `pip install -r requirements-api.txt`
-3. Copy `.env.example` to `.env` and add your Plain-language explanations were generated offline by the open model Qwen/Qwen2.5-1.5B-Instruct (Apache-2.0) on the CPU of an AMD Ryzen 7 7735HS laptop (PyTorch / Transformers, no network calls at generation time), then saved and served by the hosted app. The hosted app does not call a model and does not run on AMD hardware. 29 of 30 explanations came from the model and passed automatic checks; 1 uses a fixed factual template. credentials.
-4. `uvicorn app.main:app --reload`
-5. Open `http://127.0.0.1:8000`
+3. `uvicorn app.main:app --reload`
+4. Open `http://127.0.0.1:8000`
 
 **Architecture**  
 `data/` (UCI Dataset) → `forecasting/` (Pandas forecasting methods) → `eval/` (Replay simulation results) → `app/` (FastAPI backend) → `llm/` (Plain-language explanations were generated offline by the open model Qwen/Qwen2.5-1.5B-Instruct (Apache-2.0) on the CPU of an AMD Ryzen 7 7735HS laptop (PyTorch / Transformers, no network calls at generation time), then saved and served by the hosted app. The hosted app does not call a model and does not run on AMD hardware. 29 of 30 explanations came from the model and passed automatic checks; 1 uses a fixed factual template. explanation).
@@ -33,8 +32,6 @@ The rule fixed before we saw the test results was "lowest forecast error", and s
 
 Note that `lost_value` is an 8-week total revenue at risk, while `leftover_value` is an average weekly snapshot of unsold stock value. They must never be subtracted from one another, and we never call either method a net win. No method is called better except on forecast error, and that is the only sense.
 
-**AMD Usage**  
-We plan to use Plain-language explanations were generated offline by the open model Qwen/Qwen2.5-1.5B-Instruct (Apache-2.0) on the CPU of an AMD Ryzen 7 7735HS laptop (PyTorch / Transformers, no network calls at generation time), then saved and served by the hosted app. The hosted app does not call a model and does not run on AMD hardware. 29 of 30 explanations came from the model and passed automatic checks; 1 uses a fixed factual template. (OpenAI-compatible API) strictly to generate plain-English explanations for the reorder actions. **The language model does not forecast.** All numbers come from `eval/results.json`.
 
 **Limits & Assumptions**  
 No holding cost, margin or lead-time data; 30 products and 8 weeks; stock is simulated; price is a stand-in for cost; 1-week delivery; 1.2x buffer; the test window is the 8-week pre-Christmas build-up starting 2011-10-10.
