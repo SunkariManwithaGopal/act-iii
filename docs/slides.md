@@ -25,7 +25,7 @@
 # Slide 4: Model Serving & Next Steps
 - **Title**: AI for Explanation, Not Prediction
 - **Bullets**:
-  - [AMD_SERVING] translates actions into plain English.
+  - Plain-language explanations were generated offline by the open model Qwen/Qwen2.5-1.5B-Instruct (Apache-2.0) on the CPU of an AMD Ryzen 7 7735HS laptop (PyTorch / Transformers, no network calls at generation time), then saved and served by the hosted app. The hosted app does not call a model and does not run on AMD hardware. 29 of 30 explanations came from the model and passed automatic checks; 1 uses a fixed factual template. translates actions into plain English.
   - The language model NEVER forecasts or alters numbers.
   - Next: Real-time supplier lead times and multi-location support.
-- **Speaker Notes**: "AI's best role here is as a translator, making data actionable for the human buyer via [AMD_SERVING]."
+- **Speaker Notes**: "AI's best role here is as a translator, making data actionable for the human buyer via Plain-language explanations were generated offline by the open model Qwen/Qwen2.5-1.5B-Instruct (Apache-2.0) on the CPU of an AMD Ryzen 7 7735HS laptop (PyTorch / Transformers, no network calls at generation time), then saved and served by the hosted app. The hosted app does not call a model and does not run on AMD hardware. 29 of 30 explanations came from the model and passed automatic checks; 1 uses a fixed factual template.."

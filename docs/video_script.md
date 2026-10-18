@@ -8,7 +8,7 @@
 *Screen*: Live public URL of Restock Copilot Lite. Scroll to product row SKU 22492 (MINI PAINT SET VINTAGE).  
 *Audio*: "This is Restock Copilot Lite. It uses transparent, rule-based forecasting on public retail data. Here, for vintage mini paint sets, the smoothed forecast is 638.55 units with baseline forecast at 776.50 units. With stock at 566.53, the system recommends a reorder of 200 units."  
 *Screen*: Click the "Explain" button. Wait for the explanation badge.  
-*Audio*: "Instead of just showing numbers, we use a language model served via [AMD_SERVING] to explain the 'why' in plain English."
+*Audio*: "Instead of just showing numbers, we use a language model served via Plain-language explanations were generated offline by the open model Qwen/Qwen2.5-1.5B-Instruct (Apache-2.0) on the CPU of an AMD Ryzen 7 7735HS laptop (PyTorch / Transformers, no network calls at generation time), then saved and served by the hosted app. The hosted app does not call a model and does not run on AMD hardware. 29 of 30 explanations came from the model and passed automatic checks; 1 uses a fixed factual template. to explain the 'why' in plain English."
 
 **[0:60 - 0:80] Results & Limits**  
 *Screen*: Scroll up to the Results panel showing the comparison table.  
